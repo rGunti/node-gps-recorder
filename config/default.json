@@ -1,0 +1,45 @@
+{
+  "redis": {
+    "host": "mint.vm.ge.rgunti.ch",
+    "port": 6379,
+    "keys": {
+      "gpsAlive": "DaemonAlive.GPS",
+      "obdAlive": "OBD.State",
+      "latitude": "GPS.Latitude",
+      "longitude": "GPS.Longitude",
+      "altitude": "GPS.Altitude",
+      "fixMode": "GPS.FixMode",
+      "gpsTime": "GPS.Time",
+      "gpsSpeed": "GPS.Speed",
+      "gpsSpeedKMH": "GPS.Speed.KMH",
+      "gpsAccuracyLon": "GPS.EPX",
+      "gpsAccuracyLat": "GPS.EPY",
+      "gpsAccuracyHeight": "GPS.EPV",
+      "gpsAccuracySpeed": "GPS.EPS",
+      "obdSpeedKMH": "OBD.Speed",
+      "engineRpm": "OBD.RPM",
+      "intakeTemp": "OBD.IntakeTemp",
+      "intakeMAP": "OBD.IntakeMAP",
+      "recordTripIDA": "Trip.A.ID",
+      "recordTripIDB": "Trip.B.ID"
+    }
+  },
+  "persistentRedis": {
+    "host": "mint.vm.ge.rgunti.ch",
+    "port": 6379,
+    "keys": {
+      "odo": "GPS.ODO",
+      "tripA": "GPS.Trip.A",
+      "tripB": "GPS.Trip.B"
+    }
+  },
+  "database": {
+    "host": "192.168.1.250",
+    "port": 3306,
+    "user": "carpi-rec",
+    "pass": "carpi-rec",
+    "db": "carpi-rec"
+  },
+  "interval": 250,
+  "minTravelDistanceM": "10"
+}

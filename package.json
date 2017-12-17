@@ -1,0 +1,20 @@
+{
+  "name": "gps-recorder",
+  "version": "0.1.0",
+  "description": "GPS Recorder based on REDIS and MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raphael \"rGunti\" Guntersweiler",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.0",
+    "config": "^1.28.1",
+    "debug": "^3.1.0",
+    "gps-distance": "0.0.4",
+    "mysql2": "^1.5.1",
+    "redis": "^2.8.0",
+    "sequelize": "^4.28.5"
+  }
+}
