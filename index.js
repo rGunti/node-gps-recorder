@@ -143,6 +143,7 @@ const run = () => {
             return;
         } else if (o.gpsAlive) {
             if (o.recordTripIDA) {
+                if (recordingTripA && o.recordTripIDA != recordingTripA.tripID) recordingTripA = null;
                 let point = transformIntoTripPoint((recordingTripA) ? recordingTripA.tripID : null, o);
                 if (!lastRecordedDataA || pointNeedsUpdate(lastRecordedDataA, point)) {
                     if (!recordingTripA) {
@@ -152,7 +153,8 @@ const run = () => {
                         }).then(response => {
                             let trip = response[0];
                             recordingTripA = trip;
-                            rClient.set(REDIS_KEYS.recordTripIDA, recordingTripA.id);
+                            rClient.set(REDIS_KEYS.recordTripIDA, recordingTripA.tripID);
+                            prClient.set(REDIS_KEYS.recordTripIDA, recordingTripA.tripID);
                             point.tripID = recordingTripA.tripID;
                             TripPoint
                                 .create(point)
